@@ -1,13 +1,20 @@
 <?php
 
 class FirstCest {
+
+	public static $url = '/cgi-bin/fsearch/goo_used_search.cgi?category=USDN';
+
 	public function frontpageWorks(AcceptanceTester $I) {
-		$I->amOnPage ( '/ipn/cgi-bin/fsearch/fast.cgi?category=USDN&phrase=a&query=a' );
-		$I->seeInSource ( "中古車 テキスト検索結果" );
-		$I->fillField('#phrase_input', '');
-		$I->appendField('#phrase_input', 'appended');
-		$I->click('.searchBtn');
-		$I->see('appended');
+
+		$I->amOnPage ( self::$url );
+		$I->see ( "中古車 テキスト検索結果" );				
+	}
+	
+	public function frontpageSearch(AcceptanceTester $I) {
+		$I->fillField("//input[@type='text'][@name='phrase']", "honda");
+		$I->click("#btn_submit");
+		$I->see ('"honda"');
+		$I->makeScreenshot('Home_page_search');
 	}
 	
 }
