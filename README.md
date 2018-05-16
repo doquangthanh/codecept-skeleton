@@ -142,9 +142,12 @@ Install chromedriver rpm package:
 yum provides */libgconf-2.so.4
 sudo yum install GConf2
 ```
-// install font and libstdc
+###  install font and libstdc
+```
 yum install fontconfig freetype freetype-devel fontconfig-devel libstdc++
-
-//for japan font
+```
+### for japan font
+```
 yum groupinstall "Japanese Support"
 yum groupinstall "fonts"
+```
