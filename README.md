@@ -107,8 +107,6 @@ phantomjs --webdriver=4444
 
 ```
 
-
-### For Goola project
 #### Install plugin
 ```
 sudo yum install php-curl
