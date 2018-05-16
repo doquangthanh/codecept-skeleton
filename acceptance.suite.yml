@@ -1,0 +1,16 @@
+actor: AcceptanceTester
+modules:
+    enabled:
+        - WebDriver
+        - \Helper\Acceptance
+    config:
+        WebDriver:
+            url: 'http://localhost/'
+            browser: phantomjs
+            clear_cookies: true
+            restart: true
+            window_size: 320x450
+            capabilities:
+              webStorageEnabled: true
+              phantomjs.page.settings.userAgent: "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1"
+              unexpectedAlertBehaviour: 'accept'
